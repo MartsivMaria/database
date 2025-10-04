@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_mysqldb import MySQL
 from .config import Config 
 from controller.objects_controller import create_objects_controller
 from controller.users_controller import create_users_controller
@@ -35,4 +36,5 @@ notification_settings_controller = create_notification_settings_controller(mysql
 app.register_blueprint(notification_settings_controller)
 
 if __name__ == '__main__':
+
     app.run(debug=True)
