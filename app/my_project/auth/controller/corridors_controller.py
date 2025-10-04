@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.corridors_service import CorridorsService
+from ..services.corridors_service import CorridorsService
 
 def create_corridors_controller(mysql):
     corridors_controller = Blueprint('corridors', __name__)
@@ -43,3 +43,4 @@ def create_corridors_controller(mysql):
             return jsonify({"error": str(e)}), 500
 
     return corridors_controller
+
