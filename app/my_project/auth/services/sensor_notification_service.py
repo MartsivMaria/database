@@ -1,4 +1,4 @@
-from dao.sensor_notification_dao import SensorNotificationDAO
+from ..dao.sensor_notification_dao import SensorNotificationDAO
 
 class SensorNotificationService:
     def __init__(self, mysql):
@@ -10,4 +10,5 @@ class SensorNotificationService:
     
     
     def insert_sensor_notification_link(self, sensor_type, notification_message):
+
         return self.dao.insert_sensor_notification_link(sensor_type, notification_message)
