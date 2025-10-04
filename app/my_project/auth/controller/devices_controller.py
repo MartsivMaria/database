@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.devices_service import DevicesService
+from ..services.devices_service import DevicesService
 
 def create_devices_controller(mysql):
     devices_controller = Blueprint('devices', __name__)
@@ -46,3 +46,4 @@ def create_devices_controller(mysql):
             return jsonify({"error": str(e)}), 500
 
     return devices_controller
+
