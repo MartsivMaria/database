@@ -1,4 +1,4 @@
-from dao.users_dao import UsersDAO
+from ..dao.users_dao import UsersDAO
 
 class UsersService:
     def __init__(self, mysql):
@@ -26,4 +26,5 @@ class UsersService:
     def insert_noname_users_batch(self):
         return self.dao.insert_noname_users_batch()
     
+
     
