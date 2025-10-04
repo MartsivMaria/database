@@ -1,4 +1,4 @@
-from models.notifications import Notifications
+from ..models.notifications import Notifications
 
 class NotificationDAO:
     def __init__(self, mysql):
@@ -52,4 +52,5 @@ class NotificationDAO:
         cur.execute("UPDATE notifications SET timestamp = %s WHERE notification_id = %s", 
                     (data['timestamp'], notification_id))
         self.mysql.connection.commit()
+
         cur.close()
