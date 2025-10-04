@@ -1,4 +1,4 @@
-from models.users import Users
+from ..models.users import Users
 
 class UsersDAO:
     def __init__(self, mysql):
@@ -83,4 +83,5 @@ class UsersDAO:
             self.mysql.connection.rollback()
             raise e
         finally:
+
             cur.close()
