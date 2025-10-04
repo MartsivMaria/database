@@ -1,4 +1,4 @@
-from models.devices import Devices
+from ..models.devices import Devices
 
 class DevicesService:
     def __init__(self, mysql):
@@ -54,3 +54,4 @@ class DevicesService:
         cursor.execute(query, (device_id,))
         connection.commit()
         cursor.close()
+
