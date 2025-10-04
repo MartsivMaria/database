@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.notification_settings_service import NotificationSettingsService
+from ..services.notification_settings_service import NotificationSettingsService
 
 def create_notification_settings_controller(mysql):
     notification_settings_controller = Blueprint('notification_settings', __name__)
@@ -37,3 +37,4 @@ def create_notification_settings_controller(mysql):
             return jsonify({"error": str(e)}), 500
 
     return notification_settings_controller
+
