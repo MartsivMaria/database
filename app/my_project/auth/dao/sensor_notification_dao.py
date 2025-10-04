@@ -1,4 +1,4 @@
-from models.sensor_notification import SensorNotification
+from ..models.sensor_notification import SensorNotification
 
 class SensorNotificationDAO:
     def __init__(self, mysql):
@@ -51,4 +51,5 @@ class SensorNotificationDAO:
             self.mysql.connection.rollback()
             raise e
         finally:
+
             cur.close()
