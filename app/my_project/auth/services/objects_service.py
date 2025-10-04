@@ -1,4 +1,4 @@
-from dao.objects_dao import ObjectsDAO
+from ..dao.objects_dao import ObjectsDAO
 
 class ObjectsService:
     def __init__(self, mysql):
@@ -14,4 +14,5 @@ class ObjectsService:
         return self.dao.update_objects(object_id, objects)
 
     def remove_objects(self, object_id):
+
         return self.dao.delete_objects(object_id)
