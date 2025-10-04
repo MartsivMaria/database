@@ -1,4 +1,4 @@
-from models.corridors import Corridors
+from ..models.corridors import Corridors
 
 class CorridorsDAO:
     def __init__(self, mysql):
@@ -33,3 +33,4 @@ class CorridorsDAO:
         cur.execute("DELETE FROM corridors WHERE corridor_id = %s", (corridor_id,))
         self.mysql.connection.commit()
         cur.close()
+
