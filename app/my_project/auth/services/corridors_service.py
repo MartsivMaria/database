@@ -1,4 +1,4 @@
-from dao.corridors_dao import CorridorsDAO
+from ..dao.corridors_dao import CorridorsDAO
 
 class CorridorsService:
     def __init__(self, mysql):
@@ -15,3 +15,4 @@ class CorridorsService:
 
     def remove_corridors(self, corridor_id):
         return self.dao.delete_corridors(corridor_id)
+
