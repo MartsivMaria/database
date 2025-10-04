@@ -1,13 +1,12 @@
 from flask import Flask
-from flask_mysqldb import MySQL
 from .config import Config 
-from controller.objects_controller import create_objects_controller
-from controller.users_controller import create_users_controller
-from controller.notifications_controller import create_notifications_controller
-from controller.sensor_notification_controller import create_sensor_notification_controller
-from controller.devices_controller import create_devices_controller
-from controller.corridors_controller import create_corridors_controller
-from controller.notification_settings_controller import create_notification_settings_controller
+from .controller.objects_controller import create_objects_controller
+from .controller.users_controller import create_users_controller
+from .controller.notifications_controller import create_notifications_controller
+from .controller.sensor_notification_controller import create_sensor_notification_controller
+from .controller.devices_controller import create_devices_controller
+from .controller.corridors_controller import create_corridors_controller
+from .controller.notification_settings_controller import create_notification_settings_controller
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -38,4 +37,5 @@ app.register_blueprint(notification_settings_controller)
 if __name__ == '__main__':
 
     app.run(host="0.0.0.0", port=5000, debug=True)
+
 
