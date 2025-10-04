@@ -1,4 +1,4 @@
-from dao.notifications_dao import NotificationDAO
+from ..dao.notifications_dao import NotificationDAO
 
 class NotificationService:
     def __init__(self, mysql):
@@ -21,3 +21,4 @@ class NotificationService:
 
     def modify_notification(self, notification_id, data):
         self.dao.update_notification(notification_id, data)
+
