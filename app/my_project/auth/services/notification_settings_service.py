@@ -1,4 +1,4 @@
-from dao.notification_settings_dao import NotificationSettingsDAO
+from ..dao.notification_settings_dao import NotificationSettingsDAO
 
 class NotificationSettingsService:
     def __init__(self, mysql):
@@ -15,4 +15,5 @@ class NotificationSettingsService:
 
     def get_threshold(self, operation):
         # Викликаємо DAO для отримання результату функції
+
         return self.dao.calculate_threshold(operation)
