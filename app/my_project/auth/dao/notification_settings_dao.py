@@ -1,4 +1,4 @@
-from models.notification_settings import NotificationSettings
+from ..models.notification_settings import NotificationSettings
 
 class NotificationSettingsDAO:
     def __init__(self, mysql):
@@ -24,4 +24,5 @@ class NotificationSettingsDAO:
         result = cur.fetchone()[0]  # Отримуємо результат функції
 
         cur.close()
+
         return result
