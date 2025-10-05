@@ -7,6 +7,15 @@ def create_users_controller(mysql):
 
     @users_controller.route('/users', methods=['GET'])
     def get_users():
+        """
+        Get a list of users
+        ---
+        responses:
+          200:
+            description: list of all users
+            examples:
+              application/json: [{"id": 1, "name": "Maria"}]
+        """
         users = service.get_users()
         return jsonify(users)
     
@@ -69,4 +78,5 @@ def create_users_controller(mysql):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
+
     return users_controller
