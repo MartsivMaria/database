@@ -1,4 +1,5 @@
 from flask import Flask
+from flasgger import Swagger
 from .config import Config 
 from .controller.objects_controller import create_objects_controller
 from .controller.users_controller import create_users_controller
@@ -12,6 +13,7 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 app.config.from_object(Config)
 mysql = MySQL(app)
+swagger = Swagger(app)
 
 objects_controller = create_objects_controller(mysql)
 app.register_blueprint(objects_controller)
@@ -37,5 +39,6 @@ app.register_blueprint(notification_settings_controller)
 if __name__ == '__main__':
 
     app.run(host="0.0.0.0", port=5000, debug=True)
+
 
 
