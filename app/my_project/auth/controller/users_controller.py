@@ -33,6 +33,35 @@ def create_users_controller(mysql):
         
     @users_controller.route('/users/<int:user_id>', methods=['PUT'])
     def update_users(user_id):
+        """
+        Update user information
+        ---
+        parameters:
+          - name: user_id
+            in: path
+            type: integer
+            required: true
+            description: The ID of the user to update
+          - name: body
+            in: body
+            required: true
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+        responses:
+          200:
+            description: User updated successfully
+            examples:
+              application/json: {"message": "User updated"}
+          400:
+            description: Invalid input data
+          500:
+            description: Internal server error
+        """
         data = request.json
         if not data or 'username' not in data or 'email' not in data:
             return jsonify({"error": "Invalid data"}), 400
@@ -44,6 +73,23 @@ def create_users_controller(mysql):
         
     @users_controller.route('/users/<int:user_id>', methods=['DELETE'])
     def delete_users(user_id):
+        """
+        Delete a user by ID
+        ---
+        parameters:
+          - name: user_id
+            in: path
+            type: integer
+            required: true
+            description: The ID of the user to delete
+        responses:
+          200:
+            description: User deleted successfully
+            examples:
+              application/json: {"message": "User deleted"}
+          500:
+            description: Internal server error
+        """
         try:
             service.remove_users(user_id)
             return jsonify({"message": "User deleted"})
@@ -80,3 +126,4 @@ def create_users_controller(mysql):
         
 
     return users_controller
+
