@@ -54,8 +54,9 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: lab1-web-app
-          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_NAME }}
           package: .
+
 
 
 
