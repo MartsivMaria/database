@@ -36,9 +36,24 @@ app.register_blueprint(corridors_controller)
 notification_settings_controller = create_notification_settings_controller(mysql)
 app.register_blueprint(notification_settings_controller)
 
+print("Доступні маршрути:")
+print("Доступні маршрути:")
+for rule in app.url_map.iter_rules():
+    print(rule)
+    
+@app.route('/')
+def index():
+    return "API працює!"
+
+@app.route('/health')
+def health():
+    return jsonify({"status": "ok"}), 200
+
+
 if __name__ == '__main__':
 
     app.run(host="0.0.0.0", port=5000, debug=True)
+
 
 
 
